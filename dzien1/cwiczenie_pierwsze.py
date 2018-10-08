@@ -3,7 +3,7 @@
 ctr+alt+L
 """
 a = 1
-b = 13
+b = 14
 
 pole_prostokata = a * b
 
