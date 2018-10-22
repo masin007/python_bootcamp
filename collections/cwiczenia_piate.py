@@ -8,8 +8,16 @@
 
 i = 0
 j = 0
-for i in range(0,11):
+x = 0
+print("   ", end="")
+while x<10:
+    print(f"{x:3}", end="")
+    x +=1
+print()
+print()
 
-    for j in range(0,11):
+for i in range(0,10):
+    print(f"{i}"," ", end="")
+    for j in range(0,10):
         print(f"{i*j:3}", end="")
     print()
