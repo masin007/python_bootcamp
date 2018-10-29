@@ -1,12 +1,15 @@
 
-zbior = set()
-while  True:
-    liczba = (input("Podaj liczbe, jezeli chcesz przerwac wcisnij k "))
-    if liczba == "k":
+liczby = set()
+while True:
+    komenda = (input("Podaj liczbe, jezeli chcesz przerwac wcisnij k "))
+    if komenda.lower() == "k":
             break
     else:
-        zbior.add(liczba)
-print(zbior)
+        liczba = int(komenda)
+        liczby.add(liczba)
+print(f"Unikalnych liczb jest {len(liczby)}")
+liczby_parzyste = set(range(0,101,2))
+
+print(f"W tym liczb parzystych od 0 do 100 {len(liczby & liczby_parzyste)}")
 
 
-y = set(range(0,100, 2))
