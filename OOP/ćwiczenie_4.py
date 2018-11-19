@@ -6,6 +6,8 @@ class Basket():
         pass
 
     def add_product(self, product, qty):
+
+
         pass
 
     def count_total_price(self):
