@@ -4,13 +4,17 @@ from Przedmiot import Przedmiot
 class Postac:
     def __init__(self, imie, atak, zdrowie):
         self.imie = imie
-        self.atak = atak
+        self._atak = atak
         self.zdrowie = zdrowie
         self.max_zdrowie = zdrowie
         self.ekwipunek = []
 
-    def przedstaw_sie(self):
-        print(self)
+    @property
+    def atak(self):
+        atak_xtra = self._atak
+        for przedmiot in self.ekwipunek:
+            atak_xtra += przedmiot.bonus_atk
+        return atak_xtra
 
     def otrzymaj_obrazenia(self, obrazenia):
         # print(f"{self.imie} oberwal {obrazenia} obrazen.")
@@ -47,8 +51,7 @@ class Postac:
     def daj_przedmiot(self, przedmiot):
         self.ekwipunek.append(przedmiot)
 
-    def atak_plus(self):
-        pass
+
 
     @staticmethod
     def walka(atakujacy, broniacy):
@@ -86,6 +89,8 @@ rufus.daj_przedmiot(tulipan)
 Postac.walka(rufus, janusz)
 print(rufus)
 print(janusz)
+
+print(f"bonus.atk: {rufus.atak()}")
 
 # def test_nowa_postac():
 #     postac = Postac("Albert", 1, 20)
