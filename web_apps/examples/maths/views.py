@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from maths.models import Math
 # Create your views here.
 def obliczenia(request, operacja, a, b ):
     a, b = int(a), int(b)
